@@ -1,0 +1,16 @@
+version: "3"
+services: 
+  myoracle:
+    image: "oracle/database:19.3.0-ee"
+    volumes: 
+      - /Users/akshaybavalekar/Documents/Docker/docker-images/OracleDatabase/SingleInstance/dockerfiles
+    ports:
+      - 1522:1521
+      - 8081:8080
+      - 5501:5500
+
+  mynode:
+    build: .
+    ports: 
+      - "8000:8000"  
+  
