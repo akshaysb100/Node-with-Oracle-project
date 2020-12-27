@@ -1,0 +1,137 @@
+➜  OracleProjectInNode git:(master) ✗ docker-compose up --build
+Creating network "oracleprojectinnode_default" with the default driver
+Building mynode
+Step 1/6 : FROM node:12
+ ---> f65e5434ee1c
+Step 2/6 : WORKDIR /var/app
+ ---> Using cache
+ ---> 592c375494fb
+Step 3/6 : COPY ./package.json ./
+ ---> Using cache
+ ---> 5a4b3e10bda1
+Step 4/6 : RUN npm install
+ ---> Using cache
+ ---> 65d0c8c11bc6
+Step 5/6 : COPY . .
+ ---> 67fc3be08104
+Step 6/6 : CMD ["npm", "start"]
+ ---> Running in 9d3cb040e9eb
+Removing intermediate container 9d3cb040e9eb
+ ---> 7891c3cc2967
+
+Successfully built 7891c3cc2967
+Successfully tagged oracleprojectinnode_mynode:latest
+Creating oracleprojectinnode_mynode_1   ... done
+Creating oracleprojectinnode_myoracle_1 ... done
+Attaching to oracleprojectinnode_mynode_1, oracleprojectinnode_myoracle_1
+myoracle_1  | ORACLE EDITION: ENTERPRISE
+myoracle_1  | ORACLE PASSWORD FOR SYS, SYSTEM AND PDBADMIN: j9H85FxOPeM=1
+myoracle_1  | 
+myoracle_1  | LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 27-DEC-2020 09:40:12
+myoracle_1  | 
+myoracle_1  | Copyright (c) 1991, 2019, Oracle.  All rights reserved.
+myoracle_1  | 
+myoracle_1  | Starting /opt/oracle/product/19c/dbhome_1/bin/tnslsnr: please wait...
+myoracle_1  | 
+myoracle_1  | TNSLSNR for Linux: Version 19.0.0.0.0 - Production
+myoracle_1  | System parameter file is /opt/oracle/product/19c/dbhome_1/network/admin/listener.ora
+myoracle_1  | Log messages written to /opt/oracle/diag/tnslsnr/6d273e27e9b2/listener/alert/log.xml
+myoracle_1  | Listening on: (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1)))
+myoracle_1  | Listening on: (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=0.0.0.0)(PORT=1521)))
+myoracle_1  | 
+myoracle_1  | Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=IPC)(KEY=EXTPROC1)))
+myoracle_1  | STATUS of the LISTENER
+myoracle_1  | ------------------------
+myoracle_1  | Alias                     LISTENER
+myoracle_1  | Version                   TNSLSNR for Linux: Version 19.0.0.0.0 - Production
+myoracle_1  | Start Date                27-DEC-2020 09:40:12
+myoracle_1  | Uptime                    0 days 0 hr. 0 min. 0 sec
+myoracle_1  | Trace Level               off
+myoracle_1  | Security                  ON: Local OS Authentication
+myoracle_1  | SNMP                      OFF
+myoracle_1  | Listener Parameter File   /opt/oracle/product/19c/dbhome_1/network/admin/listener.ora
+myoracle_1  | Listener Log File         /opt/oracle/diag/tnslsnr/6d273e27e9b2/listener/alert/log.xml
+myoracle_1  | Listening Endpoints Summary...
+myoracle_1  |   (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1)))
+myoracle_1  |   (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=0.0.0.0)(PORT=1521)))
+myoracle_1  | The listener supports no services
+myoracle_1  | The command completed successfully
+mynode_1    | 
+mynode_1    | > oracleproject@1.0.0 start /var/app
+mynode_1    | > node checkConnection.js
+mynode_1    | 
+mynode_1    | DPI-1047: Cannot locate a 64-bit Oracle Client library: "libclntsh.so: cannot open shared object file: No such file or directory". See https://oracle.github.io/node-oracledb/INSTALL.html for help
+mynode_1    | Node-oracledb installation instructions: https://oracle.github.io/node-oracledb/INSTALL.html
+mynode_1    | You must have 64-bit Oracle client libraries in LD_LIBRARY_PATH, or configured with ldconfig.
+mynode_1    | If you do not have Oracle Database on this computer, then install the Instant Client Basic or Basic Light package from 
+mynode_1    | http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html
+mynode_1    | 
+mynode_1    | (node:20) UnhandledPromiseRejectionWarning: ReferenceError: connection is not defined
+mynode_1    |     at checkConnection (/var/app/checkConnection.js:15:5)
+mynode_1    | (node:20) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+mynode_1    | (node:20) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+oracleprojectinnode_mynode_1 exited with code 0
+myoracle_1  | Prepare for db operation
+myoracle_1  | 8% complete
+myoracle_1  | Copying database files
+myoracle_1  | 31% complete
+myoracle_1  | Creating and starting Oracle instance
+myoracle_1  | 32% complete
+myoracle_1  | 36% complete
+myoracle_1  | 40% complete
+myoracle_1  | 43% complete
+myoracle_1  | 46% complete
+myoracle_1  | Completing Database Creation
+myoracle_1  | 51% complete
+myoracle_1  | 54% complete
+myoracle_1  | Creating Pluggable Databases
+myoracle_1  | 58% complete
+myoracle_1  | 77% complete
+myoracle_1  | Executing Post Configuration Actions
+myoracle_1  | 100% complete
+myoracle_1  | Database creation complete. For details check the logfiles at:
+myoracle_1  |  /opt/oracle/cfgtoollogs/dbca/ORCLCDB.
+myoracle_1  | Database Information:
+myoracle_1  | Global Database Name:ORCLCDB
+myoracle_1  | System Identifier(SID):ORCLCDB
+myoracle_1  | Look at the log file "/opt/oracle/cfgtoollogs/dbca/ORCLCDB/ORCLCDB.log" for further details.
+myoracle_1  | 
+myoracle_1  | SQL*Plus: Release 19.0.0.0.0 - Production on Sun Dec 27 09:58:06 2020
+myoracle_1  | Version 19.3.0.0.0
+myoracle_1  | 
+myoracle_1  | Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+myoracle_1  | 
+myoracle_1  | 
+myoracle_1  | Connected to:
+myoracle_1  | Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+myoracle_1  | Version 19.3.0.0.0
+myoracle_1  | 
+myoracle_1  | SQL> 
+myoracle_1  | System altered.
+myoracle_1  | 
+myoracle_1  | SQL> 
+myoracle_1  | System altered.
+myoracle_1  | 
+myoracle_1  | SQL> 
+myoracle_1  | Pluggable database altered.
+myoracle_1  | 
+myoracle_1  | SQL> 
+myoracle_1  | PL/SQL procedure successfully completed.
+myoracle_1  | 
+myoracle_1  | SQL> Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+myoracle_1  | Version 19.3.0.0.0
+myoracle_1  | The Oracle base remains unchanged with value /opt/oracle
+myoracle_1  | #########################
+myoracle_1  | DATABASE IS READY TO USE!
+myoracle_1  | #########################
+myoracle_1  | The following output is now a tail of the alert.log:
+myoracle_1  | ORCLPDB1(3):Completed: ALTER DATABASE DEFAULT TABLESPACE "USERS"
+myoracle_1  | 2020-12-27T09:58:06.616337+00:00
+myoracle_1  | ALTER SYSTEM SET control_files='/opt/oracle/oradata/ORCLCDB/control01.ctl' SCOPE=SPFILE;
+myoracle_1  | 2020-12-27T09:58:06.622397+00:00
+myoracle_1  | ALTER SYSTEM SET local_listener='' SCOPE=BOTH;
+myoracle_1  |    ALTER PLUGGABLE DATABASE ORCLPDB1 SAVE STATE
+myoracle_1  | Completed:    ALTER PLUGGABLE DATABASE ORCLPDB1 SAVE STATE
+myoracle_1  | 2020-12-27T09:58:07.030644+00:00
+myoracle_1  | 
+myoracle_1  | XDB initialized.
